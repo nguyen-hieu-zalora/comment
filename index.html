@@ -1,0 +1,31 @@
+<!doctype html>
+<style>
+body {
+    background: #000;
+}
+#comment {
+    color: #FFF;
+    font-size: 3.75vw;
+    text-align: center;
+}
+</style>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Zalora customers' comment</title>
+  </head>
+  <body>
+    <p id="comment"></p>
+  </body>
+</html>
+<script type="text/javascript" src="index.json"></script>
+<script>
+    var comments = comments || [];
+    var comment = document.getElementById('comment');
+    var counter = 0;
+    comment.textContent = comments[counter];
+    setInterval(function() {
+        counter = (counter + 1) % comments.length;
+        comment.textContent = comments[counter]
+    }, 7000);
+</script>
