@@ -35,12 +35,17 @@ body {
 </html>
 <script type="text/javascript" src="index.json"></script>
 <script>
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+    var timeToWait = 7000;
     var comments = comments || [];
     var comment = document.getElementById('comment');
-    var counter = 0;
+    var numberOfComments = comments.length;
+    var counter = getRandomInt(numberOfComments);
     comment.textContent = comments[counter];
     setInterval(function() {
         counter = (counter + 1) % comments.length;
         comment.textContent = comments[counter]
-    }, 7000);
+    }, timeToWait);
 </script>
