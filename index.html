@@ -18,9 +18,17 @@ body {
     background: #000;
     font-family: Apercu,Arial,Helvetica;
 }
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
 #comment {
     color: #FFF;
-    font-size: 3.75vw;
+    font-size: 10.0vh;
     text-align: center;
 }
 </style>
@@ -30,7 +38,9 @@ body {
     <title>Zalora customers' comment</title>
   </head>
   <body>
-    <p id="comment"></p>
+    <div class="container">
+      <p id="comment"></p>
+    </div>
   </body>
 </html>
 <script type="text/javascript" src="index.json"></script>
@@ -46,6 +56,6 @@ body {
     comment.textContent = comments[counter];
     setInterval(function() {
         counter = (counter + 1) % comments.length;
-        comment.textContent = comments[counter]
+        comment.textContent = '"' + comments[counter] + '"'
     }, timeToWait);
 </script>
