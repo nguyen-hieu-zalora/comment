@@ -27,6 +27,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-size: 4.0vh;
 }
 #comment {
     font-size: 10.0vh;
@@ -43,6 +44,7 @@ body {
   </head>
   <body>
     <div class="container">
+      <span>Customer comments</span>
       <p id="comment"></p>
       <p id="country"></p>
     </div>
@@ -53,24 +55,14 @@ body {
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
     }
-    function getCustomerType(score) {
-      scoreText = '(' + score +')'
-      if (score >=9) {
-        return 'Promoter ' + scoreText
-      } else if (score >=7) {
-        return 'Passive ' + scoreText
-      } else {
-        return 'Detractor ' + scoreText
-      }
-    }
     function getCommentText(comments) {
       return '"' + comments[counter][0] + '"'
     }
     function getCountryText(comments) {
-      return getCustomerType(comments[counter][2]) + ', ' + comments[counter][1]
+      return comments[counter][1]
     }
 
-    var timeToWait = 7000;
+    var timeToWait = 10000;
     var comments = comments || [];
     var comment = document.getElementById('comment');
     var country = document.getElementById('country');
