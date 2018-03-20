@@ -29,11 +29,14 @@ body {
     flex-direction: column;
     font-size: 4.0vh;
 }
-#comment {
-    font-size: 10.0vh;
-    text-align: center;
+.comment.long-text {
+    font-size: 5.0vh;
 }
-#country {
+.comment {
+    text-align: center;
+    font-size: 10.0vh;
+}
+.country {
     font-size: 4.0vh;
 }
 </style>
@@ -45,8 +48,8 @@ body {
   <body>
     <div class="container">
       <span>Voice of the Customer</span>
-      <p id="comment"></p>
-      <p id="country"></p>
+      <p id="comment" class="comment"></p>
+      <p id="country" class="country"></p>
     </div>
   </body>
 </html>
@@ -55,24 +58,35 @@ body {
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
     }
-    function getCommentText(comments) {
+    function getCommentText(comments, counter) {
       return '"' + comments[counter][0] + '"'
     }
-    function getCountryText(comments) {
+    function getCountryText(comments, counter) {
       return comments[counter][1]
+    }
+    function setText(commentText, countryText) {
+        var comment = document.getElementById('comment');
+        var country = document.getElementById('country');
+        comment.textContent = commentText
+        country.textContent = countryText
+        if (commentText.length > maxLength) {
+            comment.classList.add('long-text');
+        } else {
+            comment.classList.remove('long-text');
+        }
     }
 
     var timeToWait = 10000;
+    var maxLength = 200; // should allow for 5 line with 40 characters per line
     var comments = comments || [];
     var comment = document.getElementById('comment');
     var country = document.getElementById('country');
     var numberOfComments = comments.length;
     var counter = getRandomInt(numberOfComments);
-    comment.textContent = getCommentText(comments)
-    country.textContent = getCountryText(comments)
+    counter = 1064;
+    setText(getCommentText(comments, counter), getCountryText(comments, counter))
     setInterval(function() {
         counter = (counter + 1) % comments.length;
-        comment.textContent = getCommentText(comments)
-        country.textContent = getCountryText(comments)
+        setText(getCommentText(comments, counter), getCountryText(comments, counter))
     }, timeToWait);
 </script>
