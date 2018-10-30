@@ -1,4 +1,4 @@
-var cacheVersion = 0;
+var cacheVersion = 1;
 var cacheVersionKey = 'v' + parseInt(cacheVersion + 1);
 var cacheUrls = {
   '/comment/index.html': 0,
@@ -6,6 +6,7 @@ var cacheUrls = {
   '/comment/index.js': 2,
   '/comment/index.json': 3,
   'https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.woff2': 4,
+  '/comment/': 5
 }
 
 var makeRequest = function(event) {
@@ -40,6 +41,7 @@ self.addEventListener('install', function(event) {
         '/comment/index.css',
         '/comment/index.js',
         '/comment/index.json',
+        '/comment/',
         'https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.woff2',
       ]);
     })
