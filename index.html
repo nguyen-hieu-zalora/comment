@@ -113,11 +113,10 @@ body {
     var comments = comments || [];
     var countryParam = getCountryParam();
 
-    console.log(countryParam);
     if (countryParam) {
       var comments = getCountryTexts(comments, countryParam);
     }
-    console.log(comments, comments.length);
+
     var comment = document.getElementById('comment');
     var country = document.getElementById('country');
     var numberOfComments = comments.length;
