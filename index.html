@@ -113,7 +113,7 @@ body {
     var comments = comments || [];
     var countryParam = getCountryParam();
 
-    if (countryParam) {
+    if (countryParam != '') {
         comments = getCountryTexts(comments, countryParam);
     }
 
