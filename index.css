@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Apercu';
+  src: url("https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.eot");
+  src: url("https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.eot?#iefix") format("embedded-opentype"), url("https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.woff2") format("woff2"), url("https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.woff") format("woff"), url("https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.ttf") format("truetype"), url("https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.svg#apercuregular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Apercu';
+  src: url("https://static-sg.zacdn.com/fonts/apercu/apercu_bold-webfont.eot");
+  src: url("https://static-sg.zacdn.com/fonts/apercu/apercu_bold-webfont.eot?#iefix") format("embedded-opentype"), url("https://static-sg.zacdn.com/fonts/apercu/apercu_bold-webfont.woff2") format("woff2"), url("https://static-sg.zacdn.com/fonts/apercu/apercu_bold-webfont.woff") format("woff"), url("https://static-sg.zacdn.com/fonts/apercu/apercu_bold-webfont.ttf") format("truetype"), url("https://static-sg.zacdn.com/fonts/apercu/apercu_bold-webfont.svg#apercubold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+    background: #000;
+    font-family: Apercu,Arial,Helvetica;
+}
+.container {
+    color: #FFF;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 4.0vh;
+}
+.comment.long-text {
+    font-size: 5.0vh;
+}
+.comment {
+    text-align: center;
+    font-size: 10.0vh;
+}
+.country {
+    font-size: 4.0vh;
+}
