@@ -93,6 +93,13 @@ body {
         return countryTexts;
     }
 
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
     function getCountryParam() {
         var countries = {
           'sg': 'Singapore',
@@ -102,8 +109,8 @@ body {
           'tw': 'Taiwan',
           'id': 'Indonesia'
         };
-        params = new URL(location.href).searchParams;
-        raw_country = params.get('country');
+        var params = new URL(location.href).searchParams;
+        var raw_country = params.get('country');
 
         return typeof(countries[raw_country]) == 'undefined' ? '' : countries[raw_country];
     }
