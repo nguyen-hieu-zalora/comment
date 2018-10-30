@@ -1,10 +1,10 @@
 var cacheVersion = 0;
 var cacheVersionKey = 'v' + parseInt(cacheVersion + 1);
 var cacheUrls = {
-  '/index.html': 0,
-  '/index.css': 1,
-  '/index.js': 2,
-  '/index.json': 3,
+  '/comment/index.html': 0,
+  '/comment/index.css': 1,
+  '/comment/index.js': 2,
+  '/comment/index.json': 3,
   'https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.woff2': 4,
 }
 
@@ -36,10 +36,10 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheVersionKey).then(function(cache) {
       return cache.addAll([
-        '/index.html',
-        '/index.css',
-        '/index.js',
-        '/index.json',
+        '/comment/index.html',
+        '/comment/index.css',
+        '/comment/index.js',
+        '/comment/index.json',
         'https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.woff2',
       ]);
     })
