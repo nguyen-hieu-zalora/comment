@@ -109,8 +109,8 @@ body {
           'tw': 'Taiwan',
           'id': 'Indonesia'
         };
-
-        var raw_country = getUrlParameter('country');
+        var params = new URL(location.href).searchParams;
+        var raw_country = params.get('country');
 
         return typeof(countries[raw_country]) == 'undefined' ? '' : countries[raw_country];
     }
