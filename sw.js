@@ -1,4 +1,4 @@
-var cacheVersion = 1;
+var cacheVersion = 2;
 var cacheVersionKey = 'v' + parseInt(cacheVersion + 1);
 var cacheUrls = {
   '/comment/index.html': 0,
@@ -6,7 +6,13 @@ var cacheUrls = {
   '/comment/index.js': 2,
   '/comment/index.json': 3,
   'https://static-sg.zacdn.com/fonts/apercu/apercu_regular-webfont.woff2': 4,
-  '/comment/': 5
+  '/comment/': 5,
+  '/comment/?country=ph': 6,
+  '/comment/?country=sg': 7,
+  '/comment/?country=my': 8,
+  '/comment/?country=hk': 9,
+  '/comment/?country=tw': 10,
+  '/comment/?country=id': 11
 }
 
 var makeRequest = function(event) {
