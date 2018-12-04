@@ -53,6 +53,18 @@ function getCountryTexts(comments, country) {
     return countryTexts;
 }
 
+function buildParams(searchString) {
+  params = searchString.replace('?', '').split('&');
+  paramsList = {}
+  for (i = 0; i < params.length; ++i) {
+    keyValue = params[i].split('=');
+    if (keyValue.length == 2) {
+      paramsList[keyValue[0]] = keyValue[1]
+    }
+  }
+  return paramsList;
+}
+
 function getCountryParam() {
     var countries = {
       'sg': 'Singapore',
@@ -62,8 +74,8 @@ function getCountryParam() {
       'tw': 'Taiwan',
       'id': 'Indonesia'
     };
-    var params = new URL(location.href).searchParams;
-    var raw_country = params.get('country');
+    var params = buildParams(window.location.search);
+    var raw_country = params['country'] || '';
 
     return typeof(countries[raw_country]) == 'undefined' ? '' : countries[raw_country];
 }
